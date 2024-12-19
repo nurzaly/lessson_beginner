@@ -92,3 +92,28 @@ class _BottomNavigationBarExampleState
     );
   }
 }
+
+class ListPage extends StatelessWidget {
+  final String title;
+  final List<String> items;
+
+  ListPage({required this.title, required this.items});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: ListView.builder(
+        itemCount: items.length,
+        itemBuilder: (context, index) {
+          return Card(
+            margin: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+            child: ListTile(
+              leading: Icon(Icons.label, color: Colors.teal),
+              title: Text(items[index]),
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
